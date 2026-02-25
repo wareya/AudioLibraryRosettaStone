@@ -88,7 +88,7 @@ int main()
     // open endpoint
     if(audioClient->Initialize(AUDCLNT_SHAREMODE_SHARED, 0, latency, 0, waveFormat, nullptr) != S_OK) return puts("f"), false;
     DWORD taskIndex = 0;
-    taskHandle = AvSetMmThreadCharacteristics("Faucet Mixer", &taskIndex);
+    taskHandle = AvSetMmThreadCharacteristics("Audio", &taskIndex);
    
     // set up render client
     if(audioClient->GetService(IID_IAudioRenderClient, (void**)&renderClient) != S_OK) return puts("g"), false;
